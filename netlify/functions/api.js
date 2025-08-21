@@ -11,12 +11,12 @@ const REDIRECT_URI = "https://lktoken.netlify.app/api/callback";
 
 const router = Router();
 
-app.get("/auth", (req, res) => {
+api.get("/auth", (req, res) => {
   const authUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${process.env.CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=r_organization_social`;
   res.redirect(authUrl);
 });
 
-app.get("/callback", async (req, res) => {
+api.get("/callback", async (req, res) => {
   const authCode = req.query.code;
 
   try {
