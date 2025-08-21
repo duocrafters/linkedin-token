@@ -4,8 +4,8 @@ import axios from "axios";
 import bodyParser from "body-parser";
 
 const api = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+api.use(bodyParser.json());
+api.use(bodyParser.urlencoded({ extended: true }));
 
 const REDIRECT_URI = "https://lktoken.netlify.app/api/callback";
 
